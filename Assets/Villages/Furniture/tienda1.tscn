@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7v34ujohpvoe"]
+
+[ext_resource type="PackedScene" path="res://Assets/Villages/Furniture/tienda1.fbx" id="1_i1bh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qh7qg"]
+size = Vector3(0.0655999, 0.26042, 0.0665911)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn4yj"]
+size = Vector3(0.535247, 0.0761846, 0.517396)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tienda1" parent="." instance=ExtResource("1_i1bh0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tienda1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tienda1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.215442, 0.132824, 0.215862)
+shape = SubResource("BoxShape3D_qh7qg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tienda1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.215442, 0.132824, -0.215569)
+shape = SubResource("BoxShape3D_qh7qg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="tienda1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215572, 0.132824, 0.215862)
+shape = SubResource("BoxShape3D_qh7qg")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="tienda1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215483, 0.132824, -0.215569)
+shape = SubResource("BoxShape3D_qh7qg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="tienda1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00165196, 0.307889, 0)
+shape = SubResource("BoxShape3D_dn4yj")

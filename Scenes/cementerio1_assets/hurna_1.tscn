@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://jpnjlcphsje8"]
+
+[ext_resource type="PackedScene" uid="uid://fbmitfc8i356" path="res://addons/kaykit_halloween_bits/Assets/gltf/coffin.gltf" id="1_qlrb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36gde"]
+size = Vector3(2.17969, 1.5979, 3.21918)
+
+[node name="hurna1" instance=ExtResource("1_qlrb5")]
+
+[node name="coffin_lid" parent="coffin2" index="0"]
+transform = Transform3D(0.655532, -0.755167, 0, 0.755167, 0.655532, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coffin2" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coffin2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123059, 0.807878, 0)
+shape = SubResource("BoxShape3D_36gde")

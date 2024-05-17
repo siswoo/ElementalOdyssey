@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://krvuex3ou1o5"]
+
+[ext_resource type="Texture2D" uid="uid://dlhh01y032wh1" path="res://Assets/HUD_Player/slotInventory1.png" id="1_ch8wf"]
+[ext_resource type="Texture2D" uid="uid://i40v616roolm" path="res://Assets/free-undead-loot/Icon1.png" id="2_ffyjb"]
+[ext_resource type="FontFile" uid="uid://bhfgdkwob2822" path="res://Fonts/OpenSans-Bold.ttf" id="3_sd7mb"]
+[ext_resource type="Texture2D" uid="uid://dhvr7u5ourxdd" path="res://Assets/HUD_Player/macroOpciones2.png" id="4_i38qp"]
+
+[node name="LootSlot" type="Button"]
+offset_right = 190.0
+offset_bottom = 60.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="fondo" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("1_ch8wf")
+expand_mode = 1
+
+[node name="icono" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("2_ffyjb")
+
+[node name="nombre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 5.0
+offset_right = 190.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("3_sd7mb")
+theme_override_font_sizes/font_size = 12
+text = "Nombre del item aaa"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(25, 20)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 70.0
+offset_bottom = 60.0
+texture = ExtResource("4_i38qp")
+expand_mode = 1
+
+[node name="cantidad" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 27.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_sd7mb")
+theme_override_font_sizes/font_size = 12
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckvt3fjvg6mj5"]
+
+[ext_resource type="PackedScene" uid="uid://bq8uikx5h25kg" path="res://Assets/Villages/paredCastillo1.glb" id="1_qiw2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aq50c"]
+size = Vector3(4.05566, 0.90539, 3.7741)
+
+[node name="paredCastillo1" instance=ExtResource("1_qiw2m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall_pillar" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_pillar/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.020059, -2.02568)
+shape = SubResource("BoxShape3D_aq50c")

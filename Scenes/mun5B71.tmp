@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3 uid="uid://cuikccctvacv6"]
+
+[ext_resource type="Script" path="res://Scenes/mundo_humano_1.gd" id="1_ek1yy"]
+[ext_resource type="PackedScene" uid="uid://cjv6xlrsfrpv5" path="res://Player/player.tscn" id="1_o8h6t"]
+[ext_resource type="PackedScene" uid="uid://c3my4yp820oik" path="res://Npcs/npc_1.tscn" id="2_20e41"]
+[ext_resource type="PackedScene" uid="uid://djd05jnomvaqq" path="res://Assets/Villages/pisoPiedra1.glb" id="3_lhe2u"]
+[ext_resource type="PackedScene" uid="uid://36oedw8ofq2e" path="res://Builds/casa_2.tscn" id="9_4roqc"]
+[ext_resource type="PackedScene" uid="uid://d24ay6oxa4o2b" path="res://Enemys/SkeletonWarrior1.tscn" id="10_3y6m4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcmws"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv7ij"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3gxhd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hnbke"]
+sky_material = SubResource("ProceduralSkyMaterial_3gxhd")
+
+[sub_resource type="Environment" id="Environment_ocqnn"]
+background_mode = 2
+sky = SubResource("Sky_hnbke")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_u47i7"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gjph3"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tp0cu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nj2h"]
+
+[node name="Mundo Humano 1" type="Node3D"]
+script = ExtResource("1_ek1yy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(59.9977, 0, -0.523592, 0, 1, 0, 0.523592, 0, 59.9977, 0, 0, 0)
+mesh = SubResource("BoxMesh_vcmws")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_xv7ij")
+
+[node name="Player" parent="." instance=ExtResource("1_o8h6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522139, 0)
+
+[node name="Ambiente" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Ambiente"]
+environment = SubResource("Environment_ocqnn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Ambiente"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Npc1" parent="." instance=ExtResource("2_20e41")]
+transform = Transform3D(0.260336, 0, 0.965518, 0, 1, 0, -0.965518, 0, 0.260336, -25.9058, 2.22929, -5.28059)
+
+[node name="Piso" type="Node" parent="."]
+
+[node name="Zona1" type="Node" parent="Piso"]
+
+[node name="pisoPiedra1" parent="Piso/Zona1" instance=ExtResource("3_lhe2u")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0.5, 0)
+visible = false
+
+[node name="Estructuras" type="Node" parent="."]
+
+[node name="Taverna" type="Node" parent="Estructuras"]
+
+[node name="Casa2" parent="Estructuras/Taverna" instance=ExtResource("9_4roqc")]
+transform = Transform3D(-0.499775, 0, 0.0149901, 0, 0.5, 0, -0.0149901, 0, -0.499775, -16.4993, 2.0915, -0.562227)
+
+[node name="Tests" type="Node" parent="."]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Tests"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.761418)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tests/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, -0.763295, 1.2348, 0, -0.331748, -2.84106, 0, 0.504715, -1.25215)
+mesh = SubResource("BoxMesh_u47i7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tests/StaticBody3D2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tests/StaticBody3D2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gjph3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tests"]
+transform = Transform3D(1, 0, 0, 0, 0.455463, 0, 0, 0, 1, 0.0289969, 1.71776, -3.83368)
+mesh = SubResource("BoxMesh_tp0cu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tests/MeshInstance3D" groups=["escalon"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tests/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_7nj2h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Tests"]
+transform = Transform3D(1, 0, 0, 0, 0.455463, 0, 0, 0, 1, 0.0289969, 2.13257, -4.94264)
+mesh = SubResource("BoxMesh_tp0cu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tests/MeshInstance3D2" groups=["escalon"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tests/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_7nj2h")
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="SkeletonWarrior1" parent="Enemigos" instance=ExtResource("10_3y6m4")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 20, 0.528975, 0)

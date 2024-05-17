@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6lhbushyfdha"]
+
+[ext_resource type="PackedScene" uid="uid://de7vf3qj8wnbt" path="res://Test/drag_drop_1.tscn" id="1_akm2e"]
+[ext_resource type="Texture2D" uid="uid://dbp38jdlrpy38" path="res://icon.svg" id="2_pehhm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="dragDrop1" parent="." instance=ExtResource("1_akm2e")]
+offset_left = 155.0
+offset_top = 37.0
+offset_right = 195.0
+offset_bottom = 77.0
+texture = ExtResource("2_pehhm")
+
+[node name="dragDrop2" parent="." instance=ExtResource("1_akm2e")]
+offset_left = 54.0
+offset_top = 78.0
+offset_right = 94.0
+offset_bottom = 118.0
+
+[node name="dragDrop3" parent="." instance=ExtResource("1_akm2e")]
+offset_left = 114.0
+offset_top = 146.0
+offset_right = 154.0
+offset_bottom = 186.0
+
+[node name="dragDrop4" parent="." instance=ExtResource("1_akm2e")]
+offset_left = 208.0
+offset_top = 107.0
+offset_right = 248.0
+offset_bottom = 147.0

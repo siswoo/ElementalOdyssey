@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo5wx60tsm0hm"]
+
+[ext_resource type="PackedScene" uid="uid://cpfw11446qmqn" path="res://addons/kaykit_halloween_bits/Assets/gltf/coffin_decorated.gltf" id="1_6g0kl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pv2d"]
+size = Vector3(2.29595, 2.4103, 3.478)
+
+[node name="hurna2" instance=ExtResource("1_6g0kl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coffin_decorated2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coffin_decorated2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00330305, 1.29283, 0)
+shape = SubResource("BoxShape3D_3pv2d")

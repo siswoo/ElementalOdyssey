@@ -1,0 +1,327 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccewhnipsigdr"]
+
+[ext_resource type="Texture2D" uid="uid://c3bvwl80y57yl" path="res://Assets/HUD_Player/inventory1.png" id="1_3w3pt"]
+[ext_resource type="Script" path="res://Player/PanelEstatus.gd" id="1_dsn2n"]
+[ext_resource type="Texture2D" uid="uid://dhvr7u5ourxdd" path="res://Assets/HUD_Player/macroOpciones2.png" id="3_223he"]
+[ext_resource type="Texture2D" uid="uid://mseorkhcjggx" path="res://Assets/HUD_Player/X1.png" id="3_d6hpc"]
+
+[node name="PanelStatus" type="CanvasLayer"]
+script = ExtResource("1_dsn2n")
+
+[node name="MainMenu" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 530.0
+grow_horizontal = 2
+rotation = -0.00108268
+texture = ExtResource("1_3w3pt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.658824, 0.658824, 0.929412, 1)
+theme_override_font_sizes/font_size = 20
+text = "Estatus"
+horizontal_alignment = 1
+
+[node name="XB" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_d6hpc")
+flat = true
+alignment = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="SaludAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="SaludT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Salud max | Xseg= "
+
+[node name="SaludD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80 | 2"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="ManaT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Mana max | Xseg= "
+
+[node name="ManaD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80 | 2"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="EnergiaT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Energia max  | Xseg=  "
+
+[node name="EnergiaD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80 | 2"
+horizontal_alignment = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="ResistenciaFiT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Resistencia física = "
+
+[node name="ResistenciaFiD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="ArmaduraT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Armadura = "
+
+[node name="ArmaduraD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="PoderMagicoT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Poder mágico = "
+
+[node name="PoderMagicoD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="DañoCriticoT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Daño critico = "
+
+[node name="DañoCriticoD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="PrecisionT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Precisión = "
+
+[node name="PrecisionD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="EvasionT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Evasión = "
+
+[node name="EvasionD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="VAtaqueT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "V Ataque = "
+
+[node name="VAtaqueD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="THabilidadT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Tiempo de habilidad = "
+
+[node name="THabilidadD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaAdd" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+texture = ExtResource("3_223he")
+expand_mode = 2
+
+[node name="RoboVidaT" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.717647, 0.717647, 0.717647, 1)
+text = "Robo de vida = "
+
+[node name="RoboVidaD" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.517647, 0.517647, 0.517647, 1)
+text = "80"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/XB" to="." method="_on_xb_pressed"]

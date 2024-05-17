@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6jj1iq76wt3l"]
+
+[ext_resource type="Script" path="res://Player/propiedades_player.gd" id="1_14oio"]
+
+[node name="PropiedadesPlayer" type="Node"]
+script = ExtResource("1_14oio")

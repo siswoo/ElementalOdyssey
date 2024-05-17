@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://expin8g6sjpk"]
+
+[ext_resource type="PackedScene" uid="uid://bowymu71lix3f" path="res://Assets/Arms/Axes/Axe_OH_1.glb" id="1_4timp"]
+
+[node name="Axe_OH_1_Izquierda" instance=ExtResource("1_4timp")]
+transform = Transform3D(-0.0412758, 0.267948, 0.128453, -0.296097, -0.0479815, 0.00494269, 0.0249592, -0.126102, 0.271064, 0.03, 0, 0)

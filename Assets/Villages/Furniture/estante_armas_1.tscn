@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuhy0qp3oj1jg"]
+
+[ext_resource type="PackedScene" uid="uid://drejwunn7fh3o" path="res://Assets/Villages/Furniture/estanteArmas1.glb" id="1_5sb1v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7g0l"]
+size = Vector3(0.201656, 0.313922, 0.147772)
+
+[node name="estanteArmas1" instance=ExtResource("1_5sb1v")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="weaponrack" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="weaponrack/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159446, 0)
+shape = SubResource("BoxShape3D_u7g0l")

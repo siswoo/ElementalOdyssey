@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csnnotulcyr6b"]
+
+[ext_resource type="PackedScene" uid="uid://ba1gmwf3esj8g" path="res://addons/kaykit_halloween_bits/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="1_v27mb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w58fn"]
+size = Vector3(1.39916, 1.24913, 1.26596)
+
+[node name="cabalaza1" instance=ExtResource("1_v27mb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pumpkin_orange_jackolantern2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pumpkin_orange_jackolantern2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.695869, 0.0400603)
+shape = SubResource("BoxShape3D_w58fn")

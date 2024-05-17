@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blcucqbwpjvyp"]
+
+[ext_resource type="PackedScene" uid="uid://cky1sen4tnh3e" path="res://Assets/Villages/Furniture/cajaFlechas1.glb" id="1_py3ru"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emsc1"]
+size = Vector3(0.139075, 0.347146, 0.133491)
+
+[node name="cajaFlechas1" instance=ExtResource("1_py3ru")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bucket_arrows" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bucket_arrows/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270493, 0.221289, -0.000579949)
+shape = SubResource("BoxShape3D_emsc1")

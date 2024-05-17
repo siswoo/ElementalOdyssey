@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwgpdho1vp5co"]
+
+[ext_resource type="Texture2D" uid="uid://c3bvwl80y57yl" path="res://Assets/HUD_Player/inventory1.png" id="1_m62v0"]
+[ext_resource type="Script" path="res://Player/panel_inventario.gd" id="1_r4fa7"]
+[ext_resource type="PackedScene" uid="uid://bdbklxr1t78us" path="res://Player/slot_inventario.tscn" id="3_p12i8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tuaov"]
+load_path = "res://.godot/imported/X1.png-abd1b60242f53fb88ea55288fd5c811a.ctex"
+
+[node name="PanelInventario" type="CanvasLayer"]
+script = ExtResource("1_r4fa7")
+
+[node name="MainMenu" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 620.0
+grow_horizontal = 2
+texture = ExtResource("1_m62v0")
+
+[node name="Titulo" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 75.0
+offset_right = 250.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.658824, 0.658824, 0.929412, 1)
+theme_override_font_sizes/font_size = 30
+text = "Inventario"
+horizontal_alignment = 1
+
+[node name="BX" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 75.0
+offset_right = 420.0
+offset_bottom = 115.0
+mouse_default_cursor_shape = 2
+icon = SubResource("CompressedTexture2D_tuaov")
+flat = true
+expand_icon = true
+
+[node name="Slots" type="Node2D" parent="MainMenu"]
+position = Vector2(60, 150)
+
+[node name="Slot" parent="MainMenu/Slots" instance=ExtResource("3_p12i8")]
+
+[node name="Slot2" parent="MainMenu/Slots" instance=ExtResource("3_p12i8")]
+position = Vector2(100, 0)
+
+[node name="Slot3" parent="MainMenu/Slots" instance=ExtResource("3_p12i8")]
+position = Vector2(200, 0)
+
+[node name="Slot4" parent="MainMenu/Slots" instance=ExtResource("3_p12i8")]
+position = Vector2(300, 0)
+
+[node name="Slot5" parent="MainMenu/Slots" instance=ExtResource("3_p12i8")]
+position = Vector2(0, 80)
+
+[connection signal="pressed" from="MainMenu/BX" to="." method="_on_bx_pressed"]

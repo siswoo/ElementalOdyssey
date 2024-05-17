@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://m3vxvm5khdbn"]
+
+[ext_resource type="PackedScene" uid="uid://dcdcd5iigdnym" path="res://addons/kaykit_halloween_bits/Assets/gltf/gravemarker_B.gltf" id="1_6shab"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eua02"]
+size = Vector3(1, 1.12255, 1)
+
+[node name="cruz1" instance=ExtResource("1_6shab")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gravemarker_B2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravemarker_B2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0244524, 0.601316, 0)
+shape = SubResource("BoxShape3D_eua02")

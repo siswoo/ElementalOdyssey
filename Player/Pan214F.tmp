@@ -1,0 +1,143 @@
+[gd_scene load_steps=4 format=3 uid="uid://08x26rn4dge1"]
+
+[ext_resource type="Texture2D" uid="uid://c3bvwl80y57yl" path="res://Assets/HUD_Player/inventory1.png" id="1_fkvt3"]
+[ext_resource type="Script" path="res://Player/PanelHabilidades.gd" id="1_pxhii"]
+[ext_resource type="Texture2D" uid="uid://mseorkhcjggx" path="res://Assets/HUD_Player/X1.png" id="2_y4rya"]
+
+[node name="PanelHabilidades" type="CanvasLayer"]
+script = ExtResource("1_pxhii")
+
+[node name="MainMenu" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 620.0
+grow_horizontal = 2
+texture = ExtResource("1_fkvt3")
+
+[node name="Titulo" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 73.0
+offset_right = 246.0
+offset_bottom = 118.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.658824, 0.658824, 0.929412, 1)
+theme_override_font_sizes/font_size = 30
+text = "Habilidades"
+horizontal_alignment = 1
+
+[node name="XB" type="Button" parent="MainMenu"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 366.0
+offset_top = 69.0
+offset_right = 406.0
+offset_bottom = 109.0
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_y4rya")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="FuerzaB" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 130.0
+offset_right = 170.0
+offset_bottom = 170.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+text = "FUERZA"
+
+[node name="AgilidadB" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 130.0
+offset_right = 422.0
+offset_bottom = 170.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+text = "AGILIDAD"
+
+[node name="MagiaB" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 130.0
+offset_right = 290.0
+offset_bottom = 170.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+text = "MAGIA"
+
+[node name="FuerzaSkills" type="Node2D" parent="MainMenu"]
+position = Vector2(-324, -31)
+
+[node name="MagiaSkills" type="Node2D" parent="MainMenu"]
+position = Vector2(-324, -31)
+
+[node name="AgilidadSkills" type="Node2D" parent="MainMenu"]
+position = Vector2(-324, -31)
+
+[node name="HGL" type="Label" parent="MainMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -80.0
+offset_right = -70.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Niveles cap:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CapeoL" type="Label" parent="MainMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "0 / 1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainMenu/XB" to="." method="_on_xb_pressed"]
+[connection signal="mouse_entered" from="MainMenu/FuerzaB" to="." method="_on_fuerza_b_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/FuerzaB" to="." method="_on_fuerza_b_mouse_exited"]
+[connection signal="pressed" from="MainMenu/FuerzaB" to="." method="_on_fuerza_b_pressed"]
+[connection signal="mouse_entered" from="MainMenu/AgilidadB" to="." method="_on_agilidad_b_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/AgilidadB" to="." method="_on_agilidad_b_mouse_exited"]
+[connection signal="pressed" from="MainMenu/AgilidadB" to="." method="_on_agilidad_b_pressed"]
+[connection signal="mouse_entered" from="MainMenu/MagiaB" to="." method="_on_magia_b_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MagiaB" to="." method="_on_magia_b_mouse_exited"]
+[connection signal="pressed" from="MainMenu/MagiaB" to="." method="_on_magia_b_pressed"]

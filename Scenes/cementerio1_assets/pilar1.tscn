@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmitex3b3x06n"]
+
+[ext_resource type="PackedScene" uid="uid://bjxgg80r70hfd" path="res://addons/kaykit_halloween_bits/Assets/gltf/pillar.gltf" id="1_kxwns"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pgks"]
+size = Vector3(1.2418, 4.2311, 1.26182)
+
+[node name="pillar" instance=ExtResource("1_kxwns")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08041, 0)
+shape = SubResource("BoxShape3D_7pgks")

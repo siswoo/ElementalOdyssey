@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddej6vktwvh2i"]
+
+[ext_resource type="PackedScene" uid="uid://bfc1xckepitc" path="res://Assets/PJ1/animaciones/animaciones2.glb" id="1_us38r"]
+[ext_resource type="PackedScene" uid="uid://lubnvghxn08c" path="res://Assets/Arms/Axes/axe_oh_1_izquierda.tscn" id="2_38ujo"]
+[ext_resource type="PackedScene" uid="uid://expin8g6sjpk" path="res://Assets/Arms/Axes/axe_oh_1_derecha.tscn" id="3_t3sdx"]
+
+[node name="animaciones2" instance=ExtResource("1_us38r")]
+
+[node name="mano_izquierda" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.694929, 0.676335, -0.244221, -0.0461556, -0.296976, -0.953768, -0.717595, 0.674074, -0.175161, 0.769642, 1.43824, 0.0947394)
+bone_name = "mixamorig_LeftHandThumb4"
+bone_idx = 14
+
+[node name="Axe_OH_1_Izquierda" parent="Armature/Skeleton3D/mano_izquierda" index="0" instance=ExtResource("2_38ujo")]
+transform = Transform3D(-0.0146001, -0.216687, 0.206963, -0.276824, -0.069561, -0.0923573, 0.114697, -0.195469, -0.196562, 0.0383754, -0.039321, -0.00582775)
+visible = false
+
+[node name="mano_derecha" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.709216, -0.64272, 0.289696, 0.0432717, -0.370461, -0.927839, 0.703663, 0.670574, -0.234925, -0.768254, 1.43604, 0.0962028)
+bone_name = "mixamorig_RightHandThumb4"
+bone_idx = 53
+
+[node name="Axe_OH_1_Izquierda" parent="Armature/Skeleton3D/mano_derecha" index="0" instance=ExtResource("3_t3sdx")]
+transform = Transform3D(0.0483792, 0.235199, 0.179836, -0.293502, 0.0141369, 0.0604687, 0.0389329, -0.185692, 0.232385, -0.0430026, -0.0544614, 0.0133208)
+visible = false

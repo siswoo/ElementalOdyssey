@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lubnvghxn08c"]
+
+[ext_resource type="PackedScene" uid="uid://bowymu71lix3f" path="res://Assets/Arms/Axes/Axe_OH_1.glb" id="1_und7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t44do"]
+size = Vector3(0.577606, 0.508615, 0.325266)
+
+[node name="Axe_OH_1_Izquierda" instance=ExtResource("1_und7v")]
+transform = Transform3D(0.0449189, -0.187846, 0.229557, -0.294744, -0.054328, 0.013218, 0.0332947, -0.227514, -0.192689, 0.03, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="colision" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.999998, -3.7998e-07, 8.9407e-08, -5.21541e-08, 0.999997, -1.87755e-06, -1.19209e-07, 4.76837e-07, 0.999998, -0.399028, 0.647321, 0.0147688)
+shape = SubResource("BoxShape3D_t44do")

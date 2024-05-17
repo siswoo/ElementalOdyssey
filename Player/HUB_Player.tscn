@@ -1,0 +1,519 @@
+[gd_scene load_steps=34 format=3 uid="uid://b0p64nur30g6o"]
+
+[ext_resource type="Texture2D" uid="uid://bqgdf0ci1iiqh" path="res://Assets/HUD_Player/hp_bar.png" id="1_erqy4"]
+[ext_resource type="Script" path="res://Player/HUB_Player.gd" id="1_xm27v"]
+[ext_resource type="Texture2D" uid="uid://cwhosld1neqo0" path="res://Assets/HUD_Player/mp_bar.png" id="2_6xkqg"]
+[ext_resource type="FontFile" uid="uid://begd2hr7vqcg" path="res://Fonts/OpenSans-Regular.ttf" id="2_ett88"]
+[ext_resource type="Texture2D" uid="uid://bm3ri4d271t2c" path="res://Assets/HUD_Player/custom_meter.png" id="3_g6dys"]
+[ext_resource type="Texture2D" uid="uid://u2vs4tdcwfrr" path="res://Assets/HUD_Player/hud_bg.png" id="4_s1xfd"]
+[ext_resource type="Texture2D" uid="uid://dbyb0smolpdv4" path="res://Assets/HUD_Player/avatar1.PNG" id="5_abea2"]
+[ext_resource type="Texture2D" uid="uid://cd856tgj584ha" path="res://Assets/HUD_Player/MacroInventory1.png" id="6_bkf07"]
+[ext_resource type="Texture2D" uid="uid://dlhh01y032wh1" path="res://Assets/HUD_Player/slotInventory1.png" id="7_i56ux"]
+[ext_resource type="Texture2D" uid="uid://dhvr7u5ourxdd" path="res://Assets/HUD_Player/macroOpciones2.png" id="9_gls7j"]
+[ext_resource type="Texture2D" uid="uid://cl8i12bdidb1i" path="res://Assets/HUD_Player/tuerca1.png" id="10_axirr"]
+[ext_resource type="Texture2D" uid="uid://cm2rxgrfikutm" path="res://Assets/HUD_Player/bag1.png" id="10_livab"]
+[ext_resource type="PackedScene" uid="uid://ccewhnipsigdr" path="res://Player/PanelStatus.tscn" id="12_lh0yn"]
+[ext_resource type="Texture2D" uid="uid://ca0oavehfn3wl" path="res://Assets/HUD_Player/skillOpcion1.png" id="12_q0oby"]
+[ext_resource type="Texture2D" uid="uid://chneerlmaqbcy" path="res://Assets/HUD_Player/statusOpciones.png" id="14_0nbvt"]
+[ext_resource type="Texture2D" uid="uid://d3l4civ11bbyu" path="res://Assets/HUD_Player/iconoMision1.png" id="15_h6b1f"]
+[ext_resource type="PackedScene" uid="uid://08x26rn4dge1" path="res://Player/PanelHabilidades.tscn" id="15_hhgkl"]
+[ext_resource type="PackedScene" uid="uid://bwgpdho1vp5co" path="res://Player/panel_inventario.tscn" id="16_ord3m"]
+[ext_resource type="PackedScene" uid="uid://b15sn0og5ghfi" path="res://Misiones/PanelMisiones.tscn" id="19_10nd0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kbkio"]
+
+[sub_resource type="Gradient" id="Gradient_3ci61"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.894118, 0.380392, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sf3pt"]
+gradient = SubResource("Gradient_3ci61")
+
+[sub_resource type="Gradient" id="Gradient_goahn"]
+offsets = PackedFloat32Array(0.0518868, 0.108491)
+colors = PackedColorArray(0, 0, 0, 1, 0.203125, 0.21875, 0.234375, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hlpl1"]
+gradient = SubResource("Gradient_goahn")
+
+[sub_resource type="Gradient" id="Gradient_f3u28"]
+offsets = PackedFloat32Array(0.896226, 0.90566)
+colors = PackedColorArray(0.254902, 0.270588, 0.294118, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jrp8i"]
+gradient = SubResource("Gradient_f3u28")
+
+[sub_resource type="Gradient" id="Gradient_06ts4"]
+colors = PackedColorArray(0, 0, 0, 1, 0.199219, 0.214844, 0.230469, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uf2dp"]
+gradient = SubResource("Gradient_06ts4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl55i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kr3b5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ejog"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcmce"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjsf3"]
+
+[node name="Player_HUB" type="CanvasLayer"]
+script = ExtResource("1_xm27v")
+
+[node name="NombrePJ" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 240.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(1, 0.984314, 0, 1)
+theme_override_fonts/font = ExtResource("2_ett88")
+theme_override_font_sizes/font_size = 16
+text = "Nombre del jugador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NivelPJ" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.8, 0.862745, 0.0941176, 1)
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExperienciaPJ" type="TextureProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -73.0
+offset_right = 250.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("CanvasTexture_kbkio")
+texture_progress = SubResource("GradientTexture1D_sf3pt")
+
+[node name="ExperienciaL" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -76.0
+offset_right = 250.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 / 100 (0%)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaludB" type="TextureProgressBar" parent="."]
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 245.0
+offset_bottom = 47.0
+value = 40.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_hlpl1")
+texture_progress = ExtResource("1_erqy4")
+
+[node name="SaludL" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 28.0
+offset_right = 220.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 12
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaB" type="TextureProgressBar" parent="."]
+offset_left = 80.0
+offset_top = 49.0
+offset_right = 260.0
+offset_bottom = 64.0
+value = 40.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_jrp8i")
+texture_progress = ExtResource("2_6xkqg")
+
+[node name="ManaL" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 48.0
+offset_right = 220.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 12
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnergiaB" type="TextureProgressBar" parent="."]
+offset_left = 70.0
+offset_top = 65.0
+offset_right = 240.0
+offset_bottom = 80.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_uf2dp")
+texture_progress = ExtResource("3_g6dys")
+
+[node name="EnergiaL" type="Label" parent="."]
+offset_left = 90.0
+offset_top = 63.0
+offset_right = 210.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 12
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(250, 50)
+offset_left = 19.0
+offset_top = 25.0
+offset_right = 219.0
+offset_bottom = 75.0
+texture = ExtResource("4_s1xfd")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_left = 26.0
+offset_top = 30.0
+offset_right = 216.0
+offset_bottom = 189.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_abea2")
+
+[node name="Slots" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Slots"]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_bkf07")
+expand_mode = 2
+
+[node name="SlotInventory1" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -44.0
+offset_right = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory2" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -44.0
+offset_right = -102.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory3" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -44.0
+offset_right = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory4" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -44.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory5" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -44.0
+offset_right = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory6" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = -44.0
+offset_right = 98.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory7" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = -44.0
+offset_right = 148.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="SlotInventory8" type="TextureRect" parent="Slots"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = -44.0
+offset_right = 198.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_i56ux")
+expand_mode = 2
+
+[node name="BoxTuerca" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -48.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarcoTuerca" type="TextureRect" parent="BoxTuerca"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_gls7j")
+
+[node name="TuercaB" type="Button" parent="BoxTuerca/MarcoTuerca"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 60.0
+offset_bottom = 58.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yl55i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kr3b5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ejog")
+icon = ExtResource("10_axirr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BoxInventario" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -88.0
+offset_right = -92.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarcoInventario" type="TextureRect" parent="BoxInventario"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_gls7j")
+
+[node name="InventarioB" type="Button" parent="BoxInventario/MarcoInventario"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 67.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yl55i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gcmce")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vjsf3")
+icon = ExtResource("10_livab")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BoxSkiles" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -168.0
+offset_right = -12.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarcoSkiles" type="TextureRect" parent="BoxSkiles"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_gls7j")
+
+[node name="SkilesB" type="Button" parent="BoxSkiles/MarcoSkiles"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 67.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yl55i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gcmce")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vjsf3")
+icon = ExtResource("12_q0oby")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BoxStatus" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -248.0
+offset_right = -12.0
+offset_bottom = -168.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarcoStatus" type="TextureRect" parent="BoxStatus"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_gls7j")
+
+[node name="StatusB" type="Button" parent="BoxStatus/MarcoStatus"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 67.0
+offset_bottom = 64.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yl55i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gcmce")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vjsf3")
+icon = ExtResource("14_0nbvt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BoxMisiones" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -88.0
+offset_right = -172.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarcoInventario" type="TextureRect" parent="BoxMisiones"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_gls7j")
+
+[node name="MisionesB" type="Button" parent="BoxMisiones/MarcoInventario"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yl55i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gcmce")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vjsf3")
+icon = ExtResource("15_h6b1f")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PanelEstatus" parent="." instance=ExtResource("12_lh0yn")]
+
+[node name="PanelHabilidades" parent="." instance=ExtResource("15_hhgkl")]
+
+[node name="PanelInventario" parent="." instance=ExtResource("16_ord3m")]
+
+[node name="PanelMisiones" parent="." instance=ExtResource("19_10nd0")]
+
+[connection signal="pressed" from="BoxInventario/MarcoInventario/InventarioB" to="." method="_on_inventario_b_pressed"]
+[connection signal="pressed" from="BoxSkiles/MarcoSkiles/SkilesB" to="." method="_on_skiles_b_pressed"]
+[connection signal="pressed" from="BoxStatus/MarcoStatus/StatusB" to="." method="_on_status_b_pressed"]
+[connection signal="pressed" from="BoxMisiones/MarcoInventario/MisionesB" to="." method="_on_misiones_b_pressed"]

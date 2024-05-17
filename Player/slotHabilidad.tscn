@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://6bpk6nub7n1u"]
+
+[ext_resource type="Texture2D" uid="uid://bag0i4y57dtbk" path="res://Assets/HUD_Player/MarcoSkill1.png" id="1_ahamp"]
+[ext_resource type="Texture2D" uid="uid://c83etgatg0idw" path="res://Assets/HUD_Player/Plus1.png" id="2_hgkgd"]
+[ext_resource type="Texture2D" uid="uid://b1fw5js4su56c" path="res://Assets/HUD_Player/Plus1-disable.png" id="3_33rnd"]
+[ext_resource type="Texture2D" uid="uid://dac5dfgki4lel" path="res://Assets/HUD_Player/Negativo1.png" id="4_w2pkg"]
+[ext_resource type="Texture2D" uid="uid://byqn702styf0d" path="res://Assets/HUD_Player/Negativo1-disable.png" id="5_tj1kq"]
+[ext_resource type="Texture2D" uid="uid://dsa2l372imics" path="res://Assets/Icons-Warrior1/Icon1.png" id="6_myk24"]
+[ext_resource type="Texture2D" uid="uid://dhvr7u5ourxdd" path="res://Assets/HUD_Player/macroOpciones2.png" id="7_mychq"]
+
+[node name="SlotSkills" type="Node2D"]
+position = Vector2(380, 207)
+
+[node name="Marco" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 110.0
+offset_bottom = 130.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("1_ahamp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Positivo" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+offset_left = 30.0
+offset_top = 93.0
+offset_right = 62.0
+offset_bottom = 125.0
+texture = ExtResource("2_hgkgd")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Positivo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Positivo_disable" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+offset_left = 30.0
+offset_top = 93.0
+offset_right = 62.0
+offset_bottom = 125.0
+texture = ExtResource("3_33rnd")
+expand_mode = 1
+
+[node name="Negativo" type="TextureRect" parent="."]
+visible = false
+offset_left = 70.0
+offset_top = 93.0
+offset_right = 102.0
+offset_bottom = 125.0
+texture = ExtResource("4_w2pkg")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Negativo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Negativo_disable" type="TextureRect" parent="."]
+visible = false
+offset_left = 70.0
+offset_top = 93.0
+offset_right = 102.0
+offset_bottom = 125.0
+texture = ExtResource("5_tj1kq")
+expand_mode = 1
+
+[node name="IconoHabilidad1" type="TextureRect" parent="."]
+offset_left = 35.0
+offset_top = 30.0
+offset_right = 95.0
+offset_bottom = 90.0
+texture = ExtResource("6_myk24")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarcoLvl" type="TextureRect" parent="."]
+offset_left = 80.0
+offset_top = 30.0
+offset_right = 112.0
+offset_bottom = 60.0
+texture = ExtResource("7_mychq")
+expand_mode = 3
+
+[node name="Nivel" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 31.0
+offset_right = 108.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

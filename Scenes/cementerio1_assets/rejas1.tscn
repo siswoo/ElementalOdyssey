@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihj70i7uygmh"]
+
+[ext_resource type="PackedScene" uid="uid://csr1eck8cmmmf" path="res://addons/kaykit_halloween_bits/Assets/gltf/fence_seperate.gltf" id="1_3uykh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ro35"]
+size = Vector3(3.61288, 1.42031, 0.557662)
+
+[node name="fence_seperate" instance=ExtResource("1_3uykh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fence_seperate2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fence_seperate2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712219, 0)
+shape = SubResource("BoxShape3D_4ro35")

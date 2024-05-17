@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd4o0j6ssajg8"]
+
+[ext_resource type="PackedScene" uid="uid://lf1ch2vxy3oq" path="res://Assets/Villages/Lights/Vela1.blend" id="1_hg1ik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvbsq"]
+size = Vector3(2.07262, 9.40022, 3.18632)
+
+[node name="Vela1" type="StaticBody3D"]
+
+[node name="Vela1" parent="." instance=ExtResource("1_hg1ik")]
+
+[node name="Fuego" parent="Vela1" index="2"]
+transform = Transform3D(1.07056, 0, 0, 0, 1.07056, 0, 0, 0, 1.07056, 5.4104e-07, 8.41715, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.09303, 0)
+light_color = Color(0.839216, 0.839216, 0.839216, 1)
+omni_range = 6.36431
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.53362, 0)
+shape = SubResource("BoxShape3D_tvbsq")
+
+[editable path="Vela1"]
