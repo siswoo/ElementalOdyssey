@@ -1,0 +1,196 @@
+[gd_scene load_steps=14 format=3 uid="uid://dkbvyl2x52po6"]
+
+[ext_resource type="Script" path="res://Menus/menu_inicio.gd" id="1_fau5i"]
+[ext_resource type="FontFile" uid="uid://bhfgdkwob2822" path="res://Fonts/OpenSans-Bold.ttf" id="1_hvhh1"]
+[ext_resource type="PackedScene" uid="uid://cuikccctvacv6" path="res://Scenes/mundo_humano_1.tscn" id="2_rtjy7"]
+[ext_resource type="Texture2D" uid="uid://7xfw334w6diq" path="res://Img/CoeFondo1.jpg" id="3_n4xp2"]
+
+[sub_resource type="Gradient" id="Gradient_dgklq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_edbrx"]
+gradient = SubResource("Gradient_dgklq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcrsr"]
+texture = SubResource("GradientTexture1D_edbrx")
+
+[sub_resource type="Gradient" id="Gradient_khf10"]
+offsets = PackedFloat32Array(0.0170455)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_igfix"]
+gradient = SubResource("Gradient_khf10")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2guc"]
+texture = SubResource("GradientTexture1D_igfix")
+
+[sub_resource type="Gradient" id="Gradient_nc6bs"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ewa2s"]
+gradient = SubResource("Gradient_nc6bs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvrbr"]
+texture = SubResource("GradientTexture1D_ewa2s")
+
+[node name="MenuInicio" type="CanvasLayer"]
+script = ExtResource("1_fau5i")
+escenaNueva = ExtResource("2_rtjy7")
+
+[node name="fondo" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_n4xp2")
+expand_mode = 1
+
+[node name="titulo" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_hvhh1")
+theme_override_font_sizes/font_size = 50
+text = "ELEMENTAL ODYSSEY"
+
+[node name="inicio" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -154.0
+offset_right = 175.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_hvhh1")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_xcrsr")
+text = "INICIAR"
+
+[node name="opciones" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -14.0
+offset_right = 175.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_hvhh1")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_xcrsr")
+text = "OPCIONES"
+
+[node name="salir" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -198.0
+offset_right = 175.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_hvhh1")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_xcrsr")
+text = "SALIR"
+
+[node name="OpcionesPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_e2guc")
+
+[node name="Label" type="Label" parent="OpcionesPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 10.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "OPCIONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cerrarOpcionesB" type="Button" parent="OpcionesPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = -100.0
+offset_right = 118.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hvhh1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_fvrbr")
+text = "CERRAR"
+
+[node name="modoVentana" type="CheckButton" parent="OpcionesPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+text = "Pantalla Completa"
+
+[connection signal="pressed" from="inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="OpcionesPanel/cerrarOpcionesB" to="." method="_on_cerrar_opciones_b_pressed"]
+[connection signal="toggled" from="OpcionesPanel/modoVentana" to="." method="_on_modo_ventana_toggled"]

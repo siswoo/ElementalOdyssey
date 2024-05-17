@@ -281,25 +281,25 @@ func _ready()->void:
 	}
 	
 	misionesActivas = {
-		0: {
-			"misionID" = 1,
-			"titulo" = "La Bienvenida",
-			"descripcion" = "Hola viajero! un gusto conocerte mi nombre es Lyra, para iniciar tu aventura deberias hablar con Nova la cantinera... ella esta atendiendo en el Bar Local",
-			"experiencia" = 20,
-			"oro" = 2,
-			"items" = {
-				0: {
-					"itemID" = 1,
-					"nombre" = "Espada Tusna",	
-				},
-			}
-		}
+#		0: {
+#			"misionID" = 1,
+#			"titulo" = "La Bienvenida",
+#			"descripcion" = "Hola viajero! un gusto conocerte mi nombre es Lyra, para iniciar tu aventura deberias hablar con Nova la cantinera... ella esta atendiendo en el Bar Local",
+#			"experiencia" = 20,
+#			"oro" = 2,
+#			"items" = {
+#				0: {
+#					"itemID" = 1,
+#					"nombre" = "Espada Tusna",	
+#				},
+#			}
+#		}
 	}
 	
 	misionesHechas = {
-		0: {
-			"misionID" = 2
-		}
+#		0: {
+#			"misionID" = 2
+#		}
 	}
 	
 	npcList = {

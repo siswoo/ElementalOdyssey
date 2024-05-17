@@ -7,13 +7,14 @@ extends CharacterBody3D
 @onready var rango_ataque: Area3D = $RangoAtaque
 @onready var tiempo_ataques: Timer = $tiempoAtaques
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var experiencia_pj: TextureProgressBar = $SubViewport/ExperienciaPJ
 @export var npcID = ""
 @export var nombreNPC = "Huesitos"
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var velocidad : float = 4.0
 var ataqueRango : float = 2.5
 var player
-var moverElementos
+var moverElementos = false : set = set_mover_elementos
 var velocidadMovimiento = 1.0
 var jugadorPosicion
 var direction
@@ -43,14 +44,6 @@ func _process(_delta):
 			moverElementos = true
 		else:
 			moverElementos = false
-		if moverElementos:
-			nombre_label.visible = true
-			barra_salud.visible = true
-			update_label_orientation()
-		else:
-			nombre_label.visible = false
-			barra_salud.visible = false
-		pass
 	
 func _physics_process(_delta):
 	if not is_on_floor():
@@ -127,3 +120,11 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Unarmed_Melee_Attack_Punch_A":
 		animacionAtaque = false
 
+func set_mover_elementos(new_state):
+	if moverElementos == new_state:
+		nombre_label.visible = false
+		barra_salud.visible = false
+	else:
+		nombre_label.visible = true
+		barra_salud.visible = true
+		update_label_orientation()
